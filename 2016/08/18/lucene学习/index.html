@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="lucene," />
 
 
 
@@ -84,13 +84,16 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mr.z">
-<meta property="og:url" content="http://zhoufa.me/404.html">
+<meta name="description" content="我是看Lucene in action学习的，也想一步一步学的猿们可以移步。这本书是基于lucene 3.0 写的，里面还是有一些api已经没有了或者过时了，我是用5.0测试的。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="lucene学习">
+<meta property="og:url" content="http://zhoufa.me/2016/08/18/lucene学习/index.html">
 <meta property="og:site_name" content="Mr.z">
-<meta property="og:updated_time" content="2016-08-16T09:09:33.368Z">
+<meta property="og:description" content="我是看Lucene in action学习的，也想一步一步学的猿们可以移步。这本书是基于lucene 3.0 写的，里面还是有一些api已经没有了或者过时了，我是用5.0测试的。">
+<meta property="og:updated_time" content="2016-08-18T09:22:21.486Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mr.z">
+<meta name="twitter:title" content="lucene学习">
+<meta name="twitter:description" content="我是看Lucene in action学习的，也想一步一步学的猿们可以移步。这本书是基于lucene 3.0 写的，里面还是有一些api已经没有了或者过时了，我是用5.0测试的。">
 
 
 
@@ -108,13 +111,7 @@
   };
 </script>
 
-  <title>
-  
-
-  
-     | Mr.z
-  
-</title>
+  <title> lucene学习 | Mr.z </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -145,7 +142,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -245,22 +242,176 @@
 
   <div id="posts" class="posts-expand">
     
-    
-      <!DOCTYPE HTML>
-<html>
-<head>
-  <meta http-equiv="content-type" content="text/html;charset=UTF-8;">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="robots" content="all">
-  <meta name="robots" content="index,follow">
-</head>
-<body>
 
-<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="http://zhoufa.me/" homepagename="回到我的主页">
-</script>
-</body>
-</html>
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                lucene学习
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-18T14:39:45+08:00" content="2016-08-18">
+              2016-08-18
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/18/lucene学习/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/18/lucene学习/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>我是看<a href="http://pan.baidu.com/s/1slcRXed" target="_blank" rel="external">Lucene in action</a>学习的，也想一步一步学的猿们可以移步。这本书是基于lucene 3.0 写的，里面还是有一些api已经没有了或者过时了，我是用5.0测试的。<br><a id="more"></a></p>
+<p>先把书里面的我不会的单词列一下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1. the for loop  for循环</div><div class="line">2. optimizing 优化</div><div class="line">3. retrieve 索引，搜索</div><div class="line">4. distinguish 区分;辨别</div><div class="line">5. chunk 块</div></pre></td></tr></table></figure></p>
+<h1 id="第一部分"><a href="#第一部分" class="headerlink" title="第一部分"></a>第一部分</h1><h2 id="创建索引时，核心类有以下几个-："><a href="#创建索引时，核心类有以下几个-：" class="headerlink" title="创建索引时，核心类有以下几个 ："></a>创建索引时，核心类有以下几个 ：</h2><ol>
+<li><p>IndexWriter </p>
+<ol>
+<li><strong>当你不是读或者查询索引的时候就用它</strong> </li>
+</ol>
+</li>
+<li><p>Directory </p>
+<ol>
+<li><strong>用来存储索引</strong></li>
+<li><strong>可以用<code>FSDirectory</code>来获取,作为IndexWriter的参数</strong></li>
+<li><strong><code>FSDirectory</code>和<code>RAMDirectory</code>区别是前者把索引存储到文件当中，后者把索引存储到内存当中，当只用于小数据的时候，或者简单测试的时候用后都比较合适，像书中的一些单元测试用的都是后者</strong></li>
+</ol>
+</li>
+<li>Analyzer<ol>
+<li><strong>分词工具的类型，当做IndexWriter的构造函数，但是在我的5.0.0里面已经换了，可以用<code>IndexWriterConfig</code>来配置，用什么样的分词决定你分的效果</strong></li>
+</ol>
+</li>
+<li><p>Document</p>
+<ol>
+<li><strong>用来存放多个field，正常用于作者，文章名称，日期等等</strong></li>
+</ol>
+</li>
+<li><p>Field</p>
+<ol>
+<li><strong>是按键值对存放的，Field很少直接用，都是根据</strong></li>
+</ol>
+</li>
+</ol>
+<h1 id="第二部分"><a href="#第二部分" class="headerlink" title="第二部分"></a>第二部分</h1><p>在分词的时候，会把一些英文转成小写，调用<code>LowerCaseFilter</code>，除了一些常用的单词<code>eg:  a,  an,  the ,  in ,  on</code>，用StopFilter</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.png" alt="西瓜 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.jpg" alt="西瓜 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/lucene/" rel="tag">#lucene</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/17/requireJs/" rel="next" title="requireJs">
+                <i class="fa fa-chevron-left"></i> requireJs
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -271,8 +422,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="404.html"
-           data-title="" data-url="http://zhoufa.me/404.html">
+      <div class="ds-thread" data-thread-key="2016/08/18/lucene学习/"
+           data-title="lucene学习" data-url="http://zhoufa.me/2016/08/18/lucene学习/">
       </div>
     
   </div>
@@ -296,8 +447,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/image/avatar.jpg"
@@ -373,6 +533,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一部分"><span class="nav-number">1.</span> <span class="nav-text">第一部分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建索引时，核心类有以下几个-："><span class="nav-number">1.1.</span> <span class="nav-text">创建索引时，核心类有以下几个 ：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二部分"><span class="nav-number">2.</span> <span class="nav-text">第二部分</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -469,6 +640,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
