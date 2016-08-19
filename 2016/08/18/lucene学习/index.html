@@ -90,10 +90,13 @@
 <meta property="og:url" content="http://zhoufa.me/2016/08/18/lucene学习/index.html">
 <meta property="og:site_name" content="Mr.z">
 <meta property="og:description" content="我是看Lucene in action学习的，也想一步一步学的猿们可以移步。这本书是基于lucene 3.0 写的，里面还是有一些api已经没有了或者过时了，我是用5.0测试的。">
-<meta property="og:updated_time" content="2016-08-18T09:22:21.486Z">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/006lK5bAgw1f6z4ik9ig3j30dr07fjtc.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/006lK5bAgw1f6z4qogmpoj30im0ak0u7.jpg">
+<meta property="og:updated_time" content="2016-08-19T09:45:21.885Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="lucene学习">
 <meta name="twitter:description" content="我是看Lucene in action学习的，也想一步一步学的猿们可以移步。这本书是基于lucene 3.0 写的，里面还是有一些api已经没有了或者过时了，我是用5.0测试的。">
+<meta name="twitter:image" content="http://ww4.sinaimg.cn/mw690/006lK5bAgw1f6z4ik9ig3j30dr07fjtc.jpg">
 
 
 
@@ -313,32 +316,45 @@
 <h1 id="第一部分"><a href="#第一部分" class="headerlink" title="第一部分"></a>第一部分</h1><h2 id="创建索引时，核心类有以下几个-："><a href="#创建索引时，核心类有以下几个-：" class="headerlink" title="创建索引时，核心类有以下几个 ："></a>创建索引时，核心类有以下几个 ：</h2><ol>
 <li><p>IndexWriter </p>
 <ol>
-<li><strong>当你不是读或者查询索引的时候就用它</strong> </li>
+<li>当你不是读或者查询索引的时候就用它</li>
 </ol>
 </li>
 <li><p>Directory </p>
 <ol>
-<li><strong>用来存储索引</strong></li>
-<li><strong>可以用<code>FSDirectory</code>来获取,作为IndexWriter的参数</strong></li>
-<li><strong><code>FSDirectory</code>和<code>RAMDirectory</code>区别是前者把索引存储到文件当中，后者把索引存储到内存当中，当只用于小数据的时候，或者简单测试的时候用后都比较合适，像书中的一些单元测试用的都是后者</strong></li>
+<li>用来存储索引</li>
+<li>可以用<code>FSDirectory</code>来获取,作为IndexWriter的参数</li>
+<li><code>FSDirectory</code>和<code>RAMDirectory</code>区别是前者把索引存储到文件当中，后者把索引存储到内存当中，当只用于小数据的时候，或者简单测试的时候用后都比较合适，像书中的一些单元测试用的都是后者</li>
 </ol>
 </li>
 <li>Analyzer<ol>
-<li><strong>分词工具的类型，当做IndexWriter的构造函数，但是在我的5.0.0里面已经换了，可以用<code>IndexWriterConfig</code>来配置，用什么样的分词决定你分的效果</strong></li>
+<li>分词工具的类型，当做IndexWriter的构造函数，但是在我的5.0.0里面已经换了，可以用<code>IndexWriterConfig</code>来配置，用什么样的分词决定你分的效果</li>
 </ol>
 </li>
 <li><p>Document</p>
 <ol>
-<li><strong>用来存放多个field，正常用于作者，文章名称，日期等等</strong></li>
+<li>用来存放多个field，正常用于作者，文章名称，日期等等</li>
 </ol>
 </li>
 <li><p>Field</p>
 <ol>
-<li><strong>是按键值对存放的，Field很少直接用，都是根据</strong></li>
+<li>是按键值对存放的，Field很少直接用，都是用它的子类</li>
 </ol>
 </li>
 </ol>
-<h1 id="第二部分"><a href="#第二部分" class="headerlink" title="第二部分"></a>第二部分</h1><p>在分词的时候，会把一些英文转成小写，调用<code>LowerCaseFilter</code>，除了一些常用的单词<code>eg:  a,  an,  the ,  in ,  on</code>，用StopFilter</p>
+<h2 id="查询索引时，核心类有以下几个-："><a href="#查询索引时，核心类有以下几个-：" class="headerlink" title="查询索引时，核心类有以下几个 ："></a>查询索引时，核心类有以下几个 ：</h2><ol>
+<li>IndexSearcher<ol>
+<li>在5.0.0里面的构造函数<img src="http://ww4.sinaimg.cn/mw690/006lK5bAgw1f6z4ik9ig3j30dr07fjtc.jpg" alt="IndexSearcher构造函数">，正常我们只是用第一个。</li>
+<li>然后IndexReader可以用<img src="http://ww1.sinaimg.cn/mw690/006lK5bAgw1f6z4qogmpoj30im0ak0u7.jpg" alt="">，官方推荐第二种，因为如果通过IndexWriter修改了索引，而你就必须创建一个新的IndexReader才能看到变化，但你把当前的IndexWriter传进去，就可以看到最新的索引了。</li>
+</ol>
+</li>
+<li>Term</li>
+<li>Query</li>
+<li>TermQuery 最基本的一个query</li>
+<li>TopDocs 查询结果展示</li>
+</ol>
+<h1 id="第二部分"><a href="#第二部分" class="headerlink" title="第二部分"></a>第二部分</h1><blockquote>
+<p>在分词的时候，会把一些英文转成小写，调用<code>LowerCaseFilter</code>，除了一些常用的单词<code>eg:  a,  an,  the ,  in ,  on</code>，用StopFilter</p>
+<h3 id="第二部分代码片段"><a href="#第二部分代码片段" class="headerlink" title="第二部分代码片段"></a><a href="https://github.com/zhoufa/lucene-6.1.0" target="_blank" rel="external">第二部分代码片段</a></h3></blockquote>
 
       
     </div>
@@ -540,7 +556,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一部分"><span class="nav-number">1.</span> <span class="nav-text">第一部分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建索引时，核心类有以下几个-："><span class="nav-number">1.1.</span> <span class="nav-text">创建索引时，核心类有以下几个 ：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二部分"><span class="nav-number">2.</span> <span class="nav-text">第二部分</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一部分"><span class="nav-number">1.</span> <span class="nav-text">第一部分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建索引时，核心类有以下几个-："><span class="nav-number">1.1.</span> <span class="nav-text">创建索引时，核心类有以下几个 ：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查询索引时，核心类有以下几个-："><span class="nav-number">1.2.</span> <span class="nav-text">查询索引时，核心类有以下几个 ：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二部分"><span class="nav-number">2.</span> <span class="nav-text">第二部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第二部分代码片段"><span class="nav-number">2.0.1.</span> <span class="nav-text">第二部分代码片段</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
