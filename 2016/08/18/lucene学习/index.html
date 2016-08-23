@@ -92,7 +92,7 @@
 <meta property="og:description" content="我是看Lucene in action学习的，也想一步一步学的猿们可以移步。这本书是基于lucene 3.0 写的，里面还是有一些api已经没有了或者过时了，我是用5.0测试的。">
 <meta property="og:image" content="http://ww4.sinaimg.cn/mw690/006lK5bAgw1f6z4ik9ig3j30dr07fjtc.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/mw690/006lK5bAgw1f6z4qogmpoj30im0ak0u7.jpg">
-<meta property="og:updated_time" content="2016-08-19T09:45:21.885Z">
+<meta property="og:updated_time" content="2016-08-23T07:00:33.542Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="lucene学习">
 <meta name="twitter:description" content="我是看Lucene in action学习的，也想一步一步学的猿们可以移步。这本书是基于lucene 3.0 写的，里面还是有一些api已经没有了或者过时了，我是用5.0测试的。">
@@ -312,7 +312,7 @@
 
       
         <p>我是看<a href="http://pan.baidu.com/s/1slcRXed" target="_blank" rel="external">Lucene in action</a>学习的，也想一步一步学的猿们可以移步。这本书是基于lucene 3.0 写的，里面还是有一些api已经没有了或者过时了，我是用5.0测试的。<br><a id="more"></a></p>
-<p>先把书里面的我不会的单词列一下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1. the for loop  for循环</div><div class="line">2. optimizing 优化</div><div class="line">3. retrieve 索引，搜索</div><div class="line">4. distinguish 区分;辨别</div><div class="line">5. chunk 块</div></pre></td></tr></table></figure></p>
+<p>先把书里面的我不会的单词列一下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">1. the for loop  for循环</div><div class="line">2. optimizing 优化</div><div class="line">3. retrieve 索引，搜索</div><div class="line">4. distinguish 区分;辨别</div><div class="line">5. chunk 块</div><div class="line">6. enumerate 枚举</div><div class="line">7. Norms 规范， 标准</div><div class="line">8. hierarchical 分层</div><div class="line">9. recursively 递归</div><div class="line">10. demonstrates演示</div><div class="line">11. embed and combine 嵌入并结合</div><div class="line">12. Wildcard 通配符</div><div class="line">13. asterisk 星号</div><div class="line">14. Fuzzy 模糊</div><div class="line">15.  curly brackets 大括号</div><div class="line">16.  square brackets 方括号（中括号）</div><div class="line">17.  denoted  表示</div><div class="line">18.  Boosting 增强</div><div class="line">19.  combine 结合，联合</div></pre></td></tr></table></figure></p>
 <h1 id="第一部分"><a href="#第一部分" class="headerlink" title="第一部分"></a>第一部分</h1><h2 id="创建索引时，核心类有以下几个-："><a href="#创建索引时，核心类有以下几个-：" class="headerlink" title="创建索引时，核心类有以下几个 ："></a>创建索引时，核心类有以下几个 ：</h2><ol>
 <li><p>IndexWriter </p>
 <ol>
@@ -352,9 +352,22 @@
 <li>TermQuery 最基本的一个query</li>
 <li>TopDocs 查询结果展示</li>
 </ol>
-<h1 id="第二部分"><a href="#第二部分" class="headerlink" title="第二部分"></a>第二部分</h1><blockquote>
+<h1 id="第二、三部分"><a href="#第二、三部分" class="headerlink" title="第二、三部分"></a>第二、三部分</h1><blockquote>
 <p>在分词的时候，会把一些英文转成小写，调用<code>LowerCaseFilter</code>，除了一些常用的单词<code>eg:  a,  an,  the ,  in ,  on</code>，用StopFilter</p>
-<h3 id="第二部分代码片段"><a href="#第二部分代码片段" class="headerlink" title="第二部分代码片段"></a><a href="https://github.com/zhoufa/lucene-6.1.0" target="_blank" rel="external">第二部分代码片段</a></h3></blockquote>
+<h3 id="第二、三部分代码片段"><a href="#第二、三部分代码片段" class="headerlink" title="第二、三部分代码片段"></a><a href="https://github.com/zhoufa/lucene-6.1.0" target="_blank" rel="external">第二、三部分代码片段</a></h3></blockquote>
+<ul>
+<li><p>用CreateTestIndex生成索引的时候，把resources下面的文件拷到你的电脑文件下面就可以了。改下里面的路径</p>
+</li>
+<li><p>这里遇到一个问题就是在用QueryParser转成NumericRangeQuery时，它默认的是TermRangeQuery,这里我们要自己写一个<a href="http://stackoverflow.com/questions/5026185/how-do-i-make-the-queryparser-in-lucene-handle-numeric-ranges" target="_blank" rel="external">QueryParer</a>,</p>
+</li>
+<li><p>在测试QueryParser转PrefixQuery时，有关于路径问题，建议用KeywordAnalyzer</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">QueryParser parser = <span class="keyword">new</span> QueryParser(<span class="string">"category"</span>, <span class="keyword">new</span> KeywordAnalyzer());</div><div class="line">  Query query = parser.parse(<span class="string">"\\/computers\\/programming*"</span>);</div><div class="line">  System.out.println(query.toString(<span class="string">"category"</span>));</div><div class="line">  TopDocs docs = searcher.search(query, <span class="number">10</span>);</div><div class="line">  <span class="keyword">int</span> programmingAndBelow = docs.totalHits;</div><div class="line"></div><div class="line">  System.out.println(<span class="string">"programmingAndBelow:"</span> + docs.totalHits);</div><div class="line">  QueryParser parserT = <span class="keyword">new</span> QueryParser(<span class="string">"category"</span>, <span class="keyword">new</span> KeywordAnalyzer());</div><div class="line">  query = parserT.parse(<span class="string">"\\/computers\\/programming"</span>);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>常用的Query子类：</p>
+<ul>
+<li></li>
+</ul>
 
       
     </div>
@@ -556,7 +569,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一部分"><span class="nav-number">1.</span> <span class="nav-text">第一部分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建索引时，核心类有以下几个-："><span class="nav-number">1.1.</span> <span class="nav-text">创建索引时，核心类有以下几个 ：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查询索引时，核心类有以下几个-："><span class="nav-number">1.2.</span> <span class="nav-text">查询索引时，核心类有以下几个 ：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二部分"><span class="nav-number">2.</span> <span class="nav-text">第二部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第二部分代码片段"><span class="nav-number">2.0.1.</span> <span class="nav-text">第二部分代码片段</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一部分"><span class="nav-number">1.</span> <span class="nav-text">第一部分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建索引时，核心类有以下几个-："><span class="nav-number">1.1.</span> <span class="nav-text">创建索引时，核心类有以下几个 ：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查询索引时，核心类有以下几个-："><span class="nav-number">1.2.</span> <span class="nav-text">查询索引时，核心类有以下几个 ：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二、三部分"><span class="nav-number">2.</span> <span class="nav-text">第二、三部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第二、三部分代码片段"><span class="nav-number">2.0.1.</span> <span class="nav-text">第二、三部分代码片段</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
