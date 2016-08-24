@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="lucene analyzer," />
 
 
 
@@ -84,12 +84,43 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mr.z">
-<meta property="og:url" content="http://zhoufa.me/archives/2016/index.html">
+<meta name="description" content="下面是看Lucene in Action 第四章 分词
+单词：
+
+sophisticated 复杂，精妙
+
+
+常用的Analyzer解析：
+WhitespaceAnalyzer 只是去掉空格，就按空格分成若干个token
+SimpleAnalyzer 首先会去年非字符，转小写 还会省略数字
+StopAnalyzer 和上一个差不多，只是会去掉一些特定的英文单词(stop words)eg:the">
+<meta property="og:type" content="article">
+<meta property="og:title" content="lucene-analyzer">
+<meta property="og:url" content="http://zhoufa.me/2016/08/24/lucene-analyzer/index.html">
 <meta property="og:site_name" content="Mr.z">
+<meta property="og:description" content="下面是看Lucene in Action 第四章 分词
+单词：
+
+sophisticated 复杂，精妙
+
+
+常用的Analyzer解析：
+WhitespaceAnalyzer 只是去掉空格，就按空格分成若干个token
+SimpleAnalyzer 首先会去年非字符，转小写 还会省略数字
+StopAnalyzer 和上一个差不多，只是会去掉一些特定的英文单词(stop words)eg:the">
+<meta property="og:updated_time" content="2016-08-24T09:47:28.465Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mr.z">
+<meta name="twitter:title" content="lucene-analyzer">
+<meta name="twitter:description" content="下面是看Lucene in Action 第四章 分词
+单词：
+
+sophisticated 复杂，精妙
+
+
+常用的Analyzer解析：
+WhitespaceAnalyzer 只是去掉空格，就按空格分成若干个token
+SimpleAnalyzer 首先会去年非字符，转小写 还会省略数字
+StopAnalyzer 和上一个差不多，只是会去掉一些特定的英文单词(stop words)eg:the">
 
 
 
@@ -107,7 +138,7 @@
   };
 </script>
 
-  <title> 归档 | Mr.z </title>
+  <title> lucene-analyzer | Mr.z </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -138,7 +169,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -236,214 +267,164 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 5 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
 
-      
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                lucene-analyzer
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-24T16:44:44+08:00" content="2016-08-24">
+              2016-08-24
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/24/lucene-analyzer/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/24/lucene-analyzer/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
       
 
       
+        <p>下面是看Lucene in Action 第四章 分词</p>
+<p>单词：</p>
+<ol>
+<li>sophisticated 复杂，精妙</li>
+</ol>
+<hr>
+<h3 id="常用的Analyzer解析："><a href="#常用的Analyzer解析：" class="headerlink" title="常用的Analyzer解析："></a>常用的Analyzer解析：</h3><ul>
+<li>WhitespaceAnalyzer <code>只是去掉空格，就按空格分成若干个token</code></li>
+<li>SimpleAnalyzer <code>首先会去年非字符，转小写 还会省略数字</code></li>
+<li>StopAnalyzer <code>和上一个差不多，只是会去掉一些特定的英文单词(stop words)eg:the ,  a</code></li>
+<li>StandardAnalyzer <code>是Lucene最精妙的核心Analyzer,可以去有一定的逻辑去识别特定的各种符号，比如公司名称，e-mail, etc,， 也会转小写和根据stop words删除</code></li>
+</ul>
+<h3 id="TokenStrem"><a href="#TokenStrem" class="headerlink" title="TokenStrem"></a>TokenStrem</h3><blockquote>
+<p>There are two different styles of  TokenStreams: Tokenizer and  TokenFilter . A good generalization to<br>explain the distinction is that  Tokenizers deal with individual characters, and  TokenFilter s deal with<br>words. Tokenizers produce a new  TokenStream , while  TokenFilters simply filter the tokens from a<br>prior  TokenStream</p>
+<p>TokenStream 有两种不同的形式：Tokenizer(断词) 和 TokenFilter ,一个不错的概论就是能明显的区分：<br>Tokenizers处理的是单个字符，TokenFilter处理的是word，Tokenizers产生新的TokenStream,而TokenFilter就简单的过滤之前的TokenStram的token</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.png" alt="西瓜 WeChat Pay"/>
+          <p>微信打赏</p>
         </div>
       
       
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.jpg" alt="西瓜 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
+    </div>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/lucene-analyzer/" rel="tag">#lucene analyzer</a>
+          
+        </div>
+      
 
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/08/24/lucene-analyzer/" itemprop="url">
-              
-                <span itemprop="name">lucene-analyzer</span>
-              
-            </a>
-        
-      </h1>
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/18/lucene学习/" rel="next" title="lucene学习">
+                <i class="fa fa-chevron-left"></i> lucene学习
+              </a>
+            
+          </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-24T16:44:44+08:00"
-              content="2016-08-24" >
-          08-24
-        </time>
-      </div>
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
 
-    </header>
+      
+      
+    </footer>
   </article>
 
 
 
-    
-
+    <div class="post-spread">
       
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/08/18/lucene学习/" itemprop="url">
-              
-                <span itemprop="name">lucene学习</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-18T14:39:45+08:00"
-              content="2016-08-18" >
-          08-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/08/17/requireJs/" itemprop="url">
-              
-                <span itemprop="name">requireJs</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-17T09:11:42+08:00"
-              content="2016-08-17" >
-          08-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/08/16/hexo学习/" itemprop="url">
-              
-                <span itemprop="name">hexo学习</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-16T14:12:24+08:00"
-              content="2016-08-16" >
-          08-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/08/16/markdown学习/" itemprop="url">
-              
-                <span itemprop="name">markdown学习</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-16T12:56:16+08:00"
-              content="2016-08-16" >
-          08-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
-
-  
-
+    </div>
+  </div>
 
 
           </div>
@@ -451,6 +432,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/08/24/lucene-analyzer/"
+           data-title="lucene-analyzer" data-url="http://zhoufa.me/2016/08/24/lucene-analyzer/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -470,8 +459,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/image/avatar.jpg"
@@ -547,6 +545,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的Analyzer解析："><span class="nav-number">1.</span> <span class="nav-text">常用的Analyzer解析：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TokenStrem"><span class="nav-number">2.</span> <span class="nav-text">TokenStrem</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -643,11 +652,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
 
 
   

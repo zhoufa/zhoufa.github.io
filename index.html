@@ -260,6 +260,122 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/24/lucene-analyzer/" itemprop="url">
+                  lucene-analyzer
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-24T16:44:44+08:00" content="2016-08-24">
+              2016-08-24
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/24/lucene-analyzer/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/24/lucene-analyzer/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>下面是看Lucene in Action 第四章 分词</p>
+<p>单词：</p>
+<ol>
+<li>sophisticated 复杂，精妙</li>
+</ol>
+<hr>
+<h3 id="常用的Analyzer解析："><a href="#常用的Analyzer解析：" class="headerlink" title="常用的Analyzer解析："></a>常用的Analyzer解析：</h3><ul>
+<li>WhitespaceAnalyzer <code>只是去掉空格，就按空格分成若干个token</code></li>
+<li>SimpleAnalyzer <code>首先会去年非字符，转小写 还会省略数字</code></li>
+<li>StopAnalyzer <code>和上一个差不多，只是会去掉一些特定的英文单词(stop words)eg:the ,  a</code></li>
+<li>StandardAnalyzer <code>是Lucene最精妙的核心Analyzer,可以去有一定的逻辑去识别特定的各种符号，比如公司名称，e-mail, etc,， 也会转小写和根据stop words删除</code></li>
+</ul>
+<h3 id="TokenStrem"><a href="#TokenStrem" class="headerlink" title="TokenStrem"></a>TokenStrem</h3><blockquote>
+<p>There are two different styles of  TokenStreams: Tokenizer and  TokenFilter . A good generalization to<br>explain the distinction is that  Tokenizers deal with individual characters, and  TokenFilter s deal with<br>words. Tokenizers produce a new  TokenStream , while  TokenFilters simply filter the tokens from a<br>prior  TokenStream</p>
+<p>TokenStream 有两种不同的形式：Tokenizer(断词) 和 TokenFilter ,一个不错的概论就是能明显的区分：<br>Tokenizers处理的是单个字符，TokenFilter处理的是word，Tokenizers产生新的TokenStream,而TokenFilter就简单的过滤之前的TokenStram的token</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/18/lucene学习/" itemprop="url">
                   lucene学习
                 </a>
@@ -692,7 +808,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -702,7 +818,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

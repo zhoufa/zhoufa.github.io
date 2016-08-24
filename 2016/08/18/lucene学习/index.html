@@ -92,7 +92,8 @@
 <meta property="og:description" content="我是看Lucene in action学习的，也想一步一步学的猿们可以移步。这本书是基于lucene 3.0 写的，里面还是有一些api已经没有了或者过时了，我是用5.0测试的。">
 <meta property="og:image" content="http://ww4.sinaimg.cn/mw690/006lK5bAgw1f6z4ik9ig3j30dr07fjtc.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/mw690/006lK5bAgw1f6z4qogmpoj30im0ak0u7.jpg">
-<meta property="og:updated_time" content="2016-08-23T07:00:33.542Z">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/006lK5bAgw1f74u9gwmihj30tb08wgmu.jpg">
+<meta property="og:updated_time" content="2016-08-24T08:51:02.602Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="lucene学习">
 <meta name="twitter:description" content="我是看Lucene in action学习的，也想一步一步学的猿们可以移步。这本书是基于lucene 3.0 写的，里面还是有一些api已经没有了或者过时了，我是用5.0测试的。">
@@ -312,7 +313,7 @@
 
       
         <p>我是看<a href="http://pan.baidu.com/s/1slcRXed" target="_blank" rel="external">Lucene in action</a>学习的，也想一步一步学的猿们可以移步。这本书是基于lucene 3.0 写的，里面还是有一些api已经没有了或者过时了，我是用5.0测试的。<br><a id="more"></a></p>
-<p>先把书里面的我不会的单词列一下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">1. the for loop  for循环</div><div class="line">2. optimizing 优化</div><div class="line">3. retrieve 索引，搜索</div><div class="line">4. distinguish 区分;辨别</div><div class="line">5. chunk 块</div><div class="line">6. enumerate 枚举</div><div class="line">7. Norms 规范， 标准</div><div class="line">8. hierarchical 分层</div><div class="line">9. recursively 递归</div><div class="line">10. demonstrates演示</div><div class="line">11. embed and combine 嵌入并结合</div><div class="line">12. Wildcard 通配符</div><div class="line">13. asterisk 星号</div><div class="line">14. Fuzzy 模糊</div><div class="line">15.  curly brackets 大括号</div><div class="line">16.  square brackets 方括号（中括号）</div><div class="line">17.  denoted  表示</div><div class="line">18.  Boosting 增强</div><div class="line">19.  combine 结合，联合</div></pre></td></tr></table></figure></p>
+<p>先把书里面的我不会的单词列一下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">1. asterisk 星号</div><div class="line">2. Boosting 增强</div><div class="line">3. combine 结合，联合</div><div class="line">4. curly brackets 大括号  chunk 块</div><div class="line">5. distinguish 区分;辨别</div><div class="line">6. demonstrates演示 denoted  表示</div><div class="line">7. enumerate 枚举</div><div class="line">8. emphasis 突出</div><div class="line">9. embed and combine 嵌入并结合</div><div class="line">10. Fuzzy 模糊</div><div class="line">11. recursively 递归</div><div class="line">12. Wildcard 通配符</div><div class="line">13. the for loop  for循环</div><div class="line">14. Norms 规范， 标准</div><div class="line">15. hierarchical 分层  </div><div class="line">16. square brackets 方括号（中括号）</div><div class="line">17. optimizing 优化</div><div class="line">18. retrieve 索引，搜索</div><div class="line">19. groundwork 基础</div><div class="line">20.</div></pre></td></tr></table></figure></p>
 <h1 id="第一部分"><a href="#第一部分" class="headerlink" title="第一部分"></a>第一部分</h1><h2 id="创建索引时，核心类有以下几个-："><a href="#创建索引时，核心类有以下几个-：" class="headerlink" title="创建索引时，核心类有以下几个 ："></a>创建索引时，核心类有以下几个 ：</h2><ol>
 <li><p>IndexWriter </p>
 <ol>
@@ -366,7 +367,19 @@
 </ul>
 <p>常用的Query子类：</p>
 <ul>
-<li></li>
+<li>NumericRangeQuery 和 TermRangeQuery 范围查询</li>
+<li>PrefixQuery 前缀查询</li>
+<li><p>PhraseQuery 短语查询<br><code>the quick brown fox jumped over the lazy dog</code>查询这句时，<br>   <img src="http://ww2.sinaimg.cn/mw690/006lK5bAgw1f74u9gwmihj30tb08wgmu.jpg" alt=""><br>   ```java<br>   /<em>下面这两种都可以查到，但是位置就不一样了*</em>/<br>   String[] phrase = {“quick”, “fox”};<br>   //slop为1<br>   //移动一步就变成 “quick brown fox”</p>
+<p>   String[] phrase = {“fox”, “quick”};<br>   //slop为3</p>
+<pre><code>//当你反过来查询的时候，步数就加上quick, 和 brown 和它本身
+</code></pre></li>
+</ul>
+<pre><code>```    
+</code></pre><blockquote>
+<p>在测试这个建立索引的时候，用IndexOptions.DOCS_AND_FREQS_AND_POSITIONS，之前三个都不支持position</p>
+</blockquote>
+<ul>
+<li>BooleanQuery 多条件判断查询</li>
 </ul>
 
       
@@ -426,6 +439,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/24/lucene-analyzer/" rel="prev" title="lucene-analyzer">
+                lucene-analyzer <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -497,7 +514,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -507,7 +524,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
