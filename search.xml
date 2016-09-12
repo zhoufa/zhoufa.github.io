@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[pytho学习]]></title>
+      <url>http://zhoufa.me/2016/09/09/python%E5%AD%A6%E4%B9%A0/</url>
+      <content type="html"><![CDATA[<h3 id="python-tip"><a href="#python-tip" class="headerlink" title="python tip"></a>python tip</h3><ol>
+<li>迭代一个数组：<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">array = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]  <span class="comment"># or whatever</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(array)):</div><div class="line">    <span class="comment"># Do something with 'i'.</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<a id="more"></a>
+<p>这是相当笨拙的，更干净简洁的做法是:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">array = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]  <span class="comment"># or whatever</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> i, e <span class="keyword">in</span> enumerate(array):</div><div class="line">    <span class="comment"># Do something with index 'i' and its corresponding element 'e'.</span></div></pre></td></tr></table></figure></p>
+<ol>
+<li><p>序列数组</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">zeroes = [<span class="number">0</span>] * <span class="number">100</span></div><div class="line"><span class="comment">#会得到一个包含100个0的列表</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>函数</p>
+</li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[website]]></title>
+      <url>http://zhoufa.me/2016/08/31/website/</url>
+      <content type="html"><![CDATA[<h2 id="以下是我找到的不错的网址："><a href="#以下是我找到的不错的网址：" class="headerlink" title="以下是我找到的不错的网址："></a>以下是我找到的不错的网址：</h2><h3 id="文学类："><a href="#文学类：" class="headerlink" title="文学类："></a>文学类：</h3><ol>
+<li><a href="http://www.360doc.com/content/14/0830/09/13975006_405758549.shtml" target="_blank" rel="external">日本海军致丁汝昌的劝降书</a></li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[lucene-analyzer]]></title>
+      <url>http://zhoufa.me/2016/08/24/lucene-analyzer/</url>
+      <content type="html"><![CDATA[<p>下面是看Lucene in Action 第四章 分词</p>
+<p>单词：</p>
+<ol>
+<li>sophisticated 复杂，精妙</li>
+</ol>
+<hr>
+<h3 id="常用的Analyzer解析："><a href="#常用的Analyzer解析：" class="headerlink" title="常用的Analyzer解析："></a>常用的Analyzer解析：</h3><ul>
+<li>WhitespaceAnalyzer <code>只是去掉空格，就按空格分成若干个token</code></li>
+<li>SimpleAnalyzer <code>首先会去年非字符，转小写 还会省略数字</code></li>
+<li>StopAnalyzer <code>和上一个差不多，只是会去掉一些特定的英文单词(stop words)eg:the ,  a</code></li>
+<li>StandardAnalyzer <code>是Lucene最精妙的核心Analyzer,可以去有一定的逻辑去识别特定的各种符号，比如公司名称，e-mail, etc,， 也会转小写和根据stop words删除</code></li>
+</ul>
+<a id="more"></a>
+<h3 id="TokenStrem"><a href="#TokenStrem" class="headerlink" title="TokenStrem"></a>TokenStrem</h3><blockquote>
+<p>There are two different styles of  TokenStreams: Tokenizer and  TokenFilter . A good generalization to<br>explain the distinction is that  Tokenizers deal with individual characters, and  TokenFilter s deal with<br>words. Tokenizers produce a new  TokenStream , while  TokenFilters simply filter the tokens from a<br>prior  TokenStream</p>
+<p>TokenStream 有两种不同的形式：Tokenizer(断词) 和 TokenFilter ,一个不错的概论就是能明显的区分：<br>Tokenizers处理的是单个字符，TokenFilter处理的是word，Tokenizers产生新的TokenStream,而TokenFilter就简单的过滤之前的TokenStram的token</p>
+</blockquote>
+<h3 id="Analyzer-building-blocks-provided-in-Lucene’s-core-API"><a href="#Analyzer-building-blocks-provided-in-Lucene’s-core-API" class="headerlink" title="Analyzer building blocks provided in Lucene’s core API"></a>Analyzer building blocks provided in Lucene’s core API</h3><p><img src="http://ww4.sinaimg.cn/mw690/006lK5bAgw1f75sb38vkyj30lh0ll7ap.jpg" alt=""><br><img src="http://ww1.sinaimg.cn/mw690/006lK5bAgw1f75sccqtosj30ol0lm45y.jpg" alt=""></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[lucene学习]]></title>
+      <url>http://zhoufa.me/2016/08/18/lucene%E5%AD%A6%E4%B9%A0/</url>
+      <content type="html"><![CDATA[<p>我是看<a href="http://pan.baidu.com/s/1slcRXed" target="_blank" rel="external">Lucene in action</a>学习的，也想一步一步学的猿们可以移步。这本书是基于lucene 3.0 写的，里面还是有一些api已经没有了或者过时了，我是用5.0测试的。<br><a id="more"></a></p>
+<p>先把书里面的我不会的单词列一下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">1. asterisk 星号</div><div class="line">2. Boosting 增强</div><div class="line">3. combine 结合，联合</div><div class="line">4. curly brackets 大括号  chunk 块</div><div class="line">5. distinguish 区分;辨别</div><div class="line">6. demonstrates演示 denoted  表示</div><div class="line">7. enumerate 枚举</div><div class="line">8. emphasis 突出</div><div class="line">9. embed and combine 嵌入并结合</div><div class="line">10. Fuzzy 模糊</div><div class="line">11. recursively 递归</div><div class="line">12. Wildcard 通配符</div><div class="line">13. the for loop  for循环</div><div class="line">14. Norms 规范， 标准</div><div class="line">15. hierarchical 分层  </div><div class="line">16. square brackets 方括号（中括号）</div><div class="line">17. optimizing 优化</div><div class="line">18. retrieve 索引，搜索</div><div class="line">19. groundwork 基础</div><div class="line">20.</div></pre></td></tr></table></figure></p>
+<h1 id="第一部分"><a href="#第一部分" class="headerlink" title="第一部分"></a>第一部分</h1><h2 id="创建索引时，核心类有以下几个-："><a href="#创建索引时，核心类有以下几个-：" class="headerlink" title="创建索引时，核心类有以下几个 ："></a>创建索引时，核心类有以下几个 ：</h2><ol>
+<li><p>IndexWriter </p>
+<ol>
+<li>当你不是读或者查询索引的时候就用它</li>
+</ol>
+</li>
+<li><p>Directory </p>
+<ol>
+<li>用来存储索引</li>
+<li>可以用<code>FSDirectory</code>来获取,作为IndexWriter的参数</li>
+<li><code>FSDirectory</code>和<code>RAMDirectory</code>区别是前者把索引存储到文件当中，后者把索引存储到内存当中，当只用于小数据的时候，或者简单测试的时候用后都比较合适，像书中的一些单元测试用的都是后者</li>
+</ol>
+</li>
+<li>Analyzer<ol>
+<li>分词工具的类型，当做IndexWriter的构造函数，但是在我的5.0.0里面已经换了，可以用<code>IndexWriterConfig</code>来配置，用什么样的分词决定你分的效果</li>
+</ol>
+</li>
+<li><p>Document</p>
+<ol>
+<li>用来存放多个field，正常用于作者，文章名称，日期等等</li>
+</ol>
+</li>
+<li><p>Field</p>
+<ol>
+<li>是按键值对存放的，Field很少直接用，都是用它的子类</li>
+</ol>
+</li>
+</ol>
+<h2 id="查询索引时，核心类有以下几个-："><a href="#查询索引时，核心类有以下几个-：" class="headerlink" title="查询索引时，核心类有以下几个 ："></a>查询索引时，核心类有以下几个 ：</h2><ol>
+<li>IndexSearcher<ol>
+<li>在5.0.0里面的构造函数<img src="http://ww4.sinaimg.cn/mw690/006lK5bAgw1f6z4ik9ig3j30dr07fjtc.jpg" alt="IndexSearcher构造函数">，正常我们只是用第一个。</li>
+<li>然后IndexReader可以用<img src="http://ww1.sinaimg.cn/mw690/006lK5bAgw1f6z4qogmpoj30im0ak0u7.jpg" alt="">，官方推荐第二种，因为如果通过IndexWriter修改了索引，而你就必须创建一个新的IndexReader才能看到变化，但你把当前的IndexWriter传进去，就可以看到最新的索引了。</li>
+</ol>
+</li>
+<li>Term</li>
+<li>Query</li>
+<li>TermQuery 最基本的一个query</li>
+<li>TopDocs 查询结果展示</li>
+</ol>
+<h1 id="第二、三部分"><a href="#第二、三部分" class="headerlink" title="第二、三部分"></a>第二、三部分</h1><blockquote>
+<p>在分词的时候，会把一些英文转成小写，调用<code>LowerCaseFilter</code>，除了一些常用的单词<code>eg:  a,  an,  the ,  in ,  on</code>，用StopFilter</p>
+<h3 id="第二、三部分代码片段"><a href="#第二、三部分代码片段" class="headerlink" title="第二、三部分代码片段"></a><a href="https://github.com/zhoufa/lucene-6.1.0" target="_blank" rel="external">第二、三部分代码片段</a></h3></blockquote>
+<ul>
+<li><p>用CreateTestIndex生成索引的时候，把resources下面的文件拷到你的电脑文件下面就可以了。改下里面的路径</p>
+</li>
+<li><p>这里遇到一个问题就是在用QueryParser转成NumericRangeQuery时，它默认的是TermRangeQuery,这里我们要自己写一个<a href="http://stackoverflow.com/questions/5026185/how-do-i-make-the-queryparser-in-lucene-handle-numeric-ranges" target="_blank" rel="external">QueryParer</a>,</p>
+</li>
+<li><p>在测试QueryParser转PrefixQuery时，有关于路径问题，建议用KeywordAnalyzer</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">QueryParser parser = <span class="keyword">new</span> QueryParser(<span class="string">"category"</span>, <span class="keyword">new</span> KeywordAnalyzer());</div><div class="line">  Query query = parser.parse(<span class="string">"\\/computers\\/programming*"</span>);</div><div class="line">  System.out.println(query.toString(<span class="string">"category"</span>));</div><div class="line">  TopDocs docs = searcher.search(query, <span class="number">10</span>);</div><div class="line">  <span class="keyword">int</span> programmingAndBelow = docs.totalHits;</div><div class="line"></div><div class="line">  System.out.println(<span class="string">"programmingAndBelow:"</span> + docs.totalHits);</div><div class="line">  QueryParser parserT = <span class="keyword">new</span> QueryParser(<span class="string">"category"</span>, <span class="keyword">new</span> KeywordAnalyzer());</div><div class="line">  query = parserT.parse(<span class="string">"\\/computers\\/programming"</span>);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>常用的Query子类：</p>
+<ul>
+<li>NumericRangeQuery 和 TermRangeQuery 范围查询</li>
+<li>PrefixQuery 前缀查询</li>
+<li><p>PhraseQuery 短语查询<br><code>the quick brown fox jumped over the lazy dog</code>查询这句时，<br>   <img src="http://ww2.sinaimg.cn/mw690/006lK5bAgw1f74u9gwmihj30tb08wgmu.jpg" alt=""><br>   ```java<br>   /<em>下面这两种都可以查到，但是位置就不一样了*</em>/<br>   String[] phrase = {“quick”, “fox”};<br>   //slop为1<br>   //移动一步就变成 “quick brown fox”</p>
+<p>   String[] phrase = {“fox”, “quick”};<br>   //slop为3</p>
+<pre><code>//当你反过来查询的时候，步数就加上quick, 和 brown 和它本身
+</code></pre></li>
+</ul>
+<pre><code>```    
+</code></pre><blockquote>
+<p>在测试这个建立索引的时候，用IndexOptions.DOCS_AND_FREQS_AND_POSITIONS，之前三个都不支持position</p>
+</blockquote>
+<ul>
+<li>BooleanQuery 多条件判断查询</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[requireJs]]></title>
+      <url>http://zhoufa.me/2016/08/17/requireJs/</url>
+      <content type="html"><![CDATA[<p> 下载 <a href="http://requirejs.org/docs/release/2.2.0/minified/require.js" target="_blank" rel="external">require.js</a>  右键另存为就可以了<br>在你的html里面引入require.js，还有一个切入点js,你可以在main.js里面写require的配置<br><a id="more"></a></p>
+<p><img src="http://thumbnail0.baidupcs.com/thumbnail/5292d193ca1d77204a91aee50e0bf02f?fid=86961096-250528-83297022852670&amp;time=1471399200&amp;rt=sh&amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-8%2FiJ5lb3jBDECiHBhb6mIr61huE%3D&amp;expires=8h&amp;chkv=0&amp;chkbd=0&amp;chkpc=&amp;dp-logid=5321168055132032873&amp;dp-callid=0&amp;size=c710_u400&amp;quality=100" alt="entry-point"></p>
+<p> 我的目录是样的：<img src="http://thumbnail0.baidupcs.com/thumbnail/e24d0ad2e018d8e5cf4de278af05d856?fid=86961096-250528-772651902576877&amp;time=1471399200&amp;rt=sh&amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-bqn2yMOuuDGaNPAPEChABDiWNSw%3D&amp;expires=8h&amp;chkv=0&amp;chkbd=0&amp;chkpc=&amp;dp-logid=5321232657301035671&amp;dp-callid=0&amp;size=c710_u400&amp;quality=100" alt="require-demo"></p>
+<p> 然后你在main.js里面写requireJs的配置<br>  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">  <span class="built_in">require</span>.config(&#123;</div><div class="line">	paths:&#123;</div><div class="line">		jquery: <span class="string">"jquery-3.1.0"</span></div><div class="line">	&#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">  <span class="comment">//other会自己引入我的other.js只要你的参数和你的js文件名称一样就可以了，</span></div><div class="line"> <span class="comment">//这里Jquery如果你把jquery-3.1.0名字改成jquery.js也不需要上面的那个Paths了</span></div><div class="line"><span class="built_in">require</span>([<span class="string">'jquery'</span>, <span class="string">'other'</span>], <span class="function"><span class="keyword">function</span>(<span class="params">$</span>) </span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">"test require.js"</span>);</div><div class="line">  	<span class="comment">// alert($().jquery);				--&gt;3.1.0</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>  还有一种是define，当你想定义一个函数时，可以在你想写的js里面</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"> </div><div class="line"> <span class="comment">//math.js和main.js require.js相同目录</span></div><div class="line">   define(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> add = <span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</div><div class="line">		<span class="keyword">return</span> a+b;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">     <span class="keyword">return</span>&#123;</div><div class="line">         add : add</div><div class="line">     &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>  在调用 的时候，因为这个math.js不依赖其它的js，所以可以直接用<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">  </div><div class="line">  //加载了math.js，同时math.js里面的方法add也可以使用了</div><div class="line">require([&apos;math&apos;], function(math)&#123;</div><div class="line"></div><div class="line">		console.log(math.add(1, 3));  //---&gt;4</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[hexo学习]]></title>
+      <url>http://zhoufa.me/2016/08/16/hexo%E5%AD%A6%E4%B9%A0/</url>
+      <content type="html"><![CDATA[<h1 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a><a href="https://hexo.io/" target="_blank" rel="external">hexo</a><img src="https://hexo.io/logo.svg" width="30px" height="30px" style="margin"></h1><h3 id="1-安装Hexo"><a href="#1-安装Hexo" class="headerlink" title="1.安装Hexo"></a>1.安装Hexo</h3><hr>
+<a id="more"></a>
+<ul>
+<li>首先需安装<a href="https://nodejs.org/en/" target="_blank" rel="external">node.js</a> 和 <a href="https://git-scm.com/" target="_blank" rel="external">git</a> 这两个 </li>
+<li>在你的文件夹下面shift+右键找开命令行执行以下操作<ul>
+<li><code>npm install -g hexo</code></li>
+<li><code>hexo init</code></li>
+<li><code>hexo g</code></li>
+<li><code>hexo server</code></li>
+</ul>
+</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[markdown学习]]></title>
+      <url>http://zhoufa.me/2016/08/16/markdown%E5%AD%A6%E4%B9%A0/</url>
+      <content type="html"><![CDATA[<p><em><strong>你学习可以到这&gt;&gt;&gt;<a href="http://www.markdowntutorial.com/lesson/1/" target="_blank" rel="external">Markdown</a></strong></em></p>
+<a id="more"></a>
+<h3 id="一个java代码块"><a href="#一个java代码块" class="headerlink" title="一个java代码块"></a>一个java代码块</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">toEdit</span><span class="params">(Model model, @PathVariable(<span class="string">"id"</span>)</span> String id) </span></div><div class="line"><span class="keyword">throws</span> BusinessException&#123;</div><div class="line">    <span class="keyword">if</span>(!<span class="string">"0"</span>.equals(id)) &#123;</div><div class="line">        WfCardRequest card = wfCardRequestService.queryCardById(id);</div><div class="line"></div><div class="line">        <span class="keyword">if</span>(Constants.AuditStatus.AUDITING.equals(card.getAuditStatus()) ||</div><div class="line">                Constants.AuditStatus.AUDITED.equals(card.getAuditStatus())) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="string">"redirect:/admin/wf/card/toview/"</span>+Constants.Operate.VIEW+<span class="string">"/"</span>+id;</div><div class="line">        &#125;</div><div class="line">            model.addAttribute(<span class="string">"card"</span>, card);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="string">"/ecoland/wf/card/card"</span>;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><p>使用 *, +, - 表示无序列表</p>
+<ul>
+<li><p>无序列表1</p>
+<ul>
+<li><p>这是无序列表下面的1级子列表</p>
+</li>
+<li><p>这是无序列表下面的1级子列表</p>
+</li>
+</ul>
+</li>
+<li><p>无序列表二</p>
+</li>
+</ul>
+<h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2><p>使用数字和.表示有序列表</p>
+<ol>
+<li><p>有序列表1</p>
+<ol>
+<li><p>这是有序列表下面的1级子列表</p>
+</li>
+<li><p>这是有序列表下面的1级子列表</p>
+</li>
+</ol>
+</li>
+<li><p>有序列表2</p>
+</li>
+</ol>
+<h2 id="文字引用"><a href="#文字引用" class="headerlink" title="文字引用"></a>文字引用</h2><p>使用&gt;表示文字的引用</p>
+<blockquote>
+<p>这表示文字的引用</p>
+</blockquote>
+<h2 id="行内代码块"><a href="#行内代码块" class="headerlink" title="行内代码块"></a>行内代码块</h2><p>使用`代码`表示行内</p>
+<p><code>&lt;label for=&quot;tab-1&quot;&gt;Tab 1&lt;/label&gt;</code></p>
+<h2 id="插入图像"><a href="#插入图像" class="headerlink" title="插入图像"></a>插入图像</h2><p>使用![描述](图片链接地址)插入一张图片</p>
+<p><img src="http://octodex.github.com/images/octdrey-catburn.jpg" alt="一张网络图片"></p>
+<p><em><strong>图片也可以用链接参照的形式去表达</strong></em></p>
+<h2 id="粗体和斜体"><a href="#粗体和斜体" class="headerlink" title="粗体和斜体"></a>粗体和斜体</h2><p>用 _your content_ 表示斜体 和 **粗体**</p>
+<p><em>这是斜体</em></p>
+<p><strong>这是粗体</strong></p>
+<p><em><strong>这是粗斜体</strong></em></p>
+<p><em>这是斜体<strong>这是粗体</strong>这是斜体</em></p>
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p>用[访问](地址)表示链接</p>
+<ul>
+<li><a href="www.baidu.com">百度</a></li>
+<li>参照链接<ul>
+<li><a href="https://cn.bing.com/" target="_blank" rel="external">测试参照</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>标签链接<ul>
+<li><h4 id="四级标题链接"><a href="#四级标题链接" class="headerlink" title="四级标题链接"></a>四级标题<a href="https://cn.bing.com/" target="_blank" rel="external">链接</a></h4></li>
+</ul>
+</li>
+</ul>
+]]></content>
+    </entry>
+    
+  
+  
+</search>
