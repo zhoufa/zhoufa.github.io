@@ -124,16 +124,16 @@
 	var st;
 	document.addEventListener('visibilitychange',function(){
 		if(document.hidden){
-			document.title=”╭(°A°`)╮好奇怪崩溃啦”;
+			document.title='╭(°A°`)╮好奇怪崩溃啦';
 			clearTimeout(st);
-			console.log(‘hide’);
+			//console.log(‘hide’);
 		}else{
 			document.title='(ฅ>ω<*ฅ) 噫又好了~ '+OriginTitile;
-			console.log('show');
+			//console.log('show');
 			st=setTimeout(function(){
 				document.title=OriginTitile;
 			},4000);
-			console.log('endChange=');
+			//console.log('endChange=');
 		}
 	});
 	</script>
