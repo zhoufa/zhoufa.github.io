@@ -6,11 +6,24 @@
     <entry>
       <title><![CDATA[hexo博客小东西]]></title>
       <url>http://zhoufa.me/2016/10/12/hexo%E5%8D%9A%E5%AE%A2%E5%B0%8F%E4%B8%9C%E8%A5%BF/</url>
-      <content type="html"><![CDATA[<h3 id="下面是在用Hexo驱动，用NexT主题搭建的博客中添加的一些小东西"><a href="#下面是在用Hexo驱动，用NexT主题搭建的博客中添加的一些小东西" class="headerlink" title="下面是在用Hexo驱动，用NexT主题搭建的博客中添加的一些小东西"></a>下面是在用Hexo驱动，用NexT主题搭建的博客中添加的一些小东西</h3><ul>
+      <content type="html"><![CDATA[<h3 id="下面是在用Hexo驱动，用NexT主题搭建的博客中添加的一些小东西"><a href="#下面是在用Hexo驱动，用NexT主题搭建的博客中添加的一些小东西" class="headerlink" title="下面是在用Hexo驱动，用NexT主题搭建的博客中添加的一些小东西"></a>下面是在用Hexo驱动，用NexT主题搭建的博客中添加的一些小东西</h3><ol>
 <li>示例：在离开你的页面时，显示 ：<img src="http://ww2.sinaimg.cn/large/006lK5bAgw1f8pipvb0n9j306e00zglh.jpg" alt="">，在返回之后就会变成 <img src="http://ww4.sinaimg.cn/large/006lK5bAgw1f8piqgjx8fj306m00xmx2.jpg" alt="">，停个4s又变回来了。只要在你的<code>themes\next\layout</code>文件下的<code>_layout.swig</code>文件的body体中添加<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="keyword">var</span> OriginTitile=<span class="built_in">document</span>.title;</div><div class="line">	<span class="keyword">var</span> st;</div><div class="line">	<span class="built_in">document</span>.addEventListener(<span class="string">'visibilitychange'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">if</span>(<span class="built_in">document</span>.hidden)&#123;</div><div class="line">			<span class="built_in">document</span>.title=<span class="string">'╭(°A°`)╮好奇怪崩溃啦!'</span>;</div><div class="line">			clearTimeout(st);</div><div class="line">			<span class="comment">//console.log(‘hide’);</span></div><div class="line">		&#125;<span class="keyword">else</span>&#123;</div><div class="line">			<span class="built_in">document</span>.title=<span class="string">'(ฅ&gt;ω&lt;*ฅ) 噫又好了~ '</span>+OriginTitile;</div><div class="line">			<span class="comment">//console.log('show');</span></div><div class="line">			st=setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">				<span class="built_in">document</span>.title=OriginTitile;</div><div class="line">			&#125;,<span class="number">4000</span>);</div><div class="line">			<span class="comment">//console.log('endChange=');</span></div><div class="line">		&#125;</div><div class="line">	&#125;);</div><div class="line">	&lt;/script&gt;</div></pre></td></tr></table></figure>
 </li>
-</ul>
+</ol>
 <a id="more"></a>
+<ol>
+<li><p>背景动态效果图和点击小红心效果的相关设置</p>
+<ol>
+<li>把 js 文件 love.js 和 particle.js 放在\themes\next\source\js\src文件目录下</li>
+<li>更新\themes\next\layout_layout.swig文件，在末尾（在前面引用会出现找不到的bug）添加以下 js 引入代码：<ol>
+<li>背景动画<br><code>&lt;script type=&quot;text/javascript&quot; src=&quot;/js/src/particle.js&quot;&gt;&lt;/script&gt;</code></li>
+<li>页面点击小红心<br><code>&lt;script type=&quot;text/javascript&quot; src=&quot;/js/src/love.js&quot;&gt;&lt;/script&gt;</code></li>
+</ol>
+</li>
+</ol>
+<p><strong><em><a href="http://ehlxr.me/" target="_blank" rel="external">推荐一个比较吊的人</a></em></strong></p>
+</li>
+</ol>
 ]]></content>
     </entry>
     
