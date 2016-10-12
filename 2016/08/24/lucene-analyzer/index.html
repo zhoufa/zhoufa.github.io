@@ -146,6 +146,22 @@ StopAnalyzer 和上一个差不多，只是会去掉一些特定的英文单词(
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
+	var OriginTitile=document.title;
+	var st;
+	document.addEventListener(‘visibilitychange’,function(){
+	if(document.hidden){
+	document.title=”╭(°A°`)╮好奇怪崩溃啦”;
+	clearTimeout(st);
+	console.log(‘hide’);
+	}else{
+	document.title='(ฅ>ω<*ฅ) 噫又好了~ '+OriginTitile;
+	console.log('show');
+	st=setTimeout(function(){
+	document.title=OriginTitile;
+	},4000);
+	console.log('endChange=');
+	}
+	});
 	
   
 
