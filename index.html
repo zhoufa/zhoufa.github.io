@@ -373,15 +373,15 @@
 
       
         
-          <h3 id="下面是在用Hexo驱动，用NexT主题搭建的博客中添加的一些小东西"><a href="#下面是在用Hexo驱动，用NexT主题搭建的博客中添加的一些小东西" class="headerlink" title="下面是在用Hexo驱动，用NexT主题搭建的博客中添加的一些小东西"></a>下面是在用Hexo驱动，用NexT主题搭建的博客中添加的一些小东西</h3><ol>
-<li>示例：在离开你的页面时，显示 ：<img src="http://ww2.sinaimg.cn/large/006lK5bAgw1f8pipvb0n9j306e00zglh.jpg" alt="">，在返回之后就会变成 <img src="http://ww4.sinaimg.cn/large/006lK5bAgw1f8piqgjx8fj306m00xmx2.jpg" alt="">，停个4s又变回来了。只要在你的<code>themes\next\layout</code>文件下的<code>_layout.swig</code>文件的body体中添加<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="keyword">var</span> OriginTitile=<span class="built_in">document</span>.title;</div><div class="line">	<span class="keyword">var</span> st;</div><div class="line">	<span class="built_in">document</span>.addEventListener(<span class="string">'visibilitychange'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">if</span>(<span class="built_in">document</span>.hidden)&#123;</div><div class="line">			<span class="built_in">document</span>.title=<span class="string">'╭(°A°`)╮好奇怪崩溃啦!'</span>;</div><div class="line">			clearTimeout(st);</div><div class="line">			<span class="comment">//console.log(‘hide’);</span></div><div class="line">		&#125;<span class="keyword">else</span>&#123;</div><div class="line">			<span class="built_in">document</span>.title=<span class="string">'(ฅ&gt;ω&lt;*ฅ) 噫又好了~ '</span>+OriginTitile;</div><div class="line">			<span class="comment">//console.log('show');</span></div><div class="line">			st=setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">				<span class="built_in">document</span>.title=OriginTitile;</div><div class="line">			&#125;,<span class="number">4000</span>);</div><div class="line">			<span class="comment">//console.log('endChange=');</span></div><div class="line">		&#125;</div><div class="line">	&#125;);</div><div class="line">	&lt;/script&gt;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/10/12/hexo博客小东西/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <h3 id="下面是在用Hexo驱动，用NexT主题搭建的博客中添加的一些小东西"><a href="#下面是在用Hexo驱动，用NexT主题搭建的博客中添加的一些小东西" class="headerlink" title="下面是在用Hexo驱动，用NexT主题搭建的博客中添加的一些小东西"></a>下面是在用Hexo驱动，用NexT主题搭建的博客中添加的一些小东西</h3><p>示例：在离开你的页面时，显示 ：<img src="http://ww2.sinaimg.cn/large/006lK5bAgw1f8pipvb0n9j306e00zglh.jpg" alt="">，在返回之后就会变成 <img src="http://ww4.sinaimg.cn/large/006lK5bAgw1f8piqgjx8fj306m00xmx2.jpg" alt="">，停个4s又变回来了。只要在你的<code>themes\next\layout</code>文件下的<code>_layout.swig</code>文件的body体中添加<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="keyword">var</span> OriginTitile=<span class="built_in">document</span>.title;</div><div class="line">	<span class="keyword">var</span> st;</div><div class="line">	<span class="built_in">document</span>.addEventListener(<span class="string">'visibilitychange'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">if</span>(<span class="built_in">document</span>.hidden)&#123;</div><div class="line">			<span class="built_in">document</span>.title=<span class="string">'╭(°A°`)╮好奇怪崩溃啦!'</span>;</div><div class="line">			clearTimeout(st);</div><div class="line">			<span class="comment">//console.log(‘hide’);</span></div><div class="line">		&#125;<span class="keyword">else</span>&#123;</div><div class="line">			<span class="built_in">document</span>.title=<span class="string">'(ฅ&gt;ω&lt;*ฅ) 噫又好了~ '</span>+OriginTitile;</div><div class="line">			<span class="comment">//console.log('show');</span></div><div class="line">			st=setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">				<span class="built_in">document</span>.title=OriginTitile;</div><div class="line">			&#125;,<span class="number">4000</span>);</div><div class="line">			<span class="comment">//console.log('endChange=');</span></div><div class="line">		&#125;</div><div class="line">	&#125;);</div><div class="line">	&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p><a href="http://ehlxr.me/2016/08/30/%E4%BD%BF%E7%94%A8Hexo%E5%9F%BA%E4%BA%8EGitHub-Pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%B8%89%EF%BC%89/" target="_blank" rel="external">背景动态效果图和点击小红心效果的相关设置</a></p>
+<p><a href="http://blog.ynxiu.com/2016/duoshuo-fangke.html" target="_blank" rel="external">添加留言链接1</a>、<a href="http://lancelot_lewis.coding.me/2016/05/11/blog/hexo-guestbook/" target="_blank" rel="external">添加留言链接2</a>  </p>
+<p><a href="http://www.iamlj.com/2016/08/add-special-effect-harlem-shake-for-hexo/#more" target="_blank" rel="external">添加High特效链接1</a>、<a href="http://lancelot_lewis.coding.me/2016/05/14/blog/hexo-high/" target="_blank" rel="external">Hign特效链接2</a></p>
+<hr>
+<p><strong><em><a href="http://ehlxr.me/" target="_blank" rel="external">推荐一个比较吊的人</a></em></strong></p>
+
+          
         
       
     </div>
@@ -1266,6 +1266,157 @@
         </nav>
 
         
+
+		 <a title="�ղص���ǩ��ż��Highһ��^_^" rel="alternate" class="mw-harlem_shake_slow wobble shake" href='javascript:(function() {
+    function c() {
+        var e = document.createElement("link");
+        e.setAttribute("type", "text/css");
+        e.setAttribute("rel", "stylesheet");
+        e.setAttribute("href", f);
+        e.setAttribute("class", l);
+        document.body.appendChild(e)
+    }
+ 
+    function h() {
+        var e = document.getElementsByClassName(l);
+        for (var t = 0; t < e.length; t++) {
+            document.body.removeChild(e[t])
+        }
+    }
+ 
+    function p() {
+        var e = document.createElement("div");
+        e.setAttribute("class", a);
+        document.body.appendChild(e);
+        setTimeout(function() {
+            document.body.removeChild(e)
+        }, 100)
+    }
+ 
+    function d(e) {
+        return {
+            height : e.offsetHeight,
+            width : e.offsetWidth
+        }
+    }
+ 
+    function v(i) {
+        var s = d(i);
+        return s.height > e && s.height < n && s.width > t && s.width < r
+    }
+ 
+    function m(e) {
+        var t = e;
+        var n = 0;
+        while (!!t) {
+            n += t.offsetTop;
+            t = t.offsetParent
+        }
+        return n
+    }
+ 
+    function g() {
+        var e = document.documentElement;
+        if (!!window.innerWidth) {
+            return window.innerHeight
+        } else if (e && !isNaN(e.clientHeight)) {
+            return e.clientHeight
+        }
+        return 0
+    }
+ 
+    function y() {
+        if (window.pageYOffset) {
+            return window.pageYOffset
+        }
+        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+    }
+ 
+    function E(e) {
+        var t = m(e);
+        return t >= w && t <= b + w
+    }
+ 
+    function S() {
+        var e = document.createElement("audio");
+        e.setAttribute("class", l);
+        e.src = i;
+        e.loop = false;
+        e.addEventListener("canplay", function() {
+            setTimeout(function() {
+                x(k)
+            }, 500);
+            setTimeout(function() {
+                N();
+                p();
+                for (var e = 0; e < O.length; e++) {
+                    T(O[e])
+                }
+            }, 15500)
+        }, true);
+        e.addEventListener("ended", function() {
+            N();
+            h()
+        }, true);
+        e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+        document.body.appendChild(e);
+        e.play()
+    }
+ 
+    function x(e) {
+        e.className += " " + s + " " + o
+    }
+ 
+    function T(e) {
+        e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+    }
+ 
+    function N() {
+        var e = document.getElementsByClassName(s);
+        var t = new RegExp("\\b" + s + "\\b");
+        for (var n = 0; n < e.length; ) {
+            e[n].className = e[n].className.replace(t, "")
+        }
+    }
+ 
+    var e = 30;
+    var t = 30;
+    var n = 350;
+    var r = 350;
+    var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+    var s = "mw-harlem_shake_me";
+    var o = "im_first";
+    var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+    var a = "mw-strobe_light";
+    var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+    var l = "mw_added_css";
+    var b = g();
+    var w = y();
+    var C = document.getElementsByTagName("*");
+    var k = null;
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            if (E(A)) {
+                k = A;
+                break
+            }
+        }
+    }
+    if (A === null) {
+        console.warn("Could not find a node of the right size. Please try a different page.");
+        return
+    }
+    c();
+    S();
+    var O = [];
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            O.push(A)
+        }
+    }
+})()'><i class="fa fa-music"></i> High</a>
 
         <div class="links-of-author motion-element">
           
